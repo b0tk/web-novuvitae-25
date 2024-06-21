@@ -1,0 +1,25 @@
+.hero-section {
+    position: relative;
+    background: url('https://cdn.discordapp.com/attachments/1162263699256508467/1253832406730014770/back.jpg?ex=667749ec&is=6675f86c&hm=a5641d7cdc012754f5b280685313c991b704b701d50128a0c07cb25fa3dc2f6b&') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+.overlay-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    white-space: nowrap;
+}
