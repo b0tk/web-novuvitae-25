@@ -1,0 +1,104 @@
+/* Estilos específicos para la sección content-section */
+.content-section {
+ 
+  padding: 80px 0; /* Espaciado interno */
+  text-align: center; /* Centrado del contenido */
+  overflow: hidden; /* Ocultar desbordamiento del contenido */
+}
+
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.red-box {
+  background: linear-gradient(135deg, #8e44ad, #2c3e50); /* Gradiente de color para red-box en tonos morados y negros */
+  color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  width: calc(50% - 40px); /* Ancho del 50% con margen */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.red-box:hover {
+  transform: translateY(-5px); /* Efecto de levantamiento al pasar el ratón */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada al pasar el ratón */
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.image-wrapper {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.text-wrapper {
+  flex: 1 1 400px;
+  text-align: left;
+  padding: 20px;
+}
+
+.animated-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #8e44ad; /* Color de texto en tono morado */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 16px;
+}
+
+.animated-button:hover {
+  background-color: #8e44ad; /* Cambio de color de fondo al pasar el ratón */
+  color: #fff; /* Cambio de color de texto al pasar el ratón */
+}
+
+@keyframes animateGradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+.wave-container {
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px; /* Espacio superior para separar la ola del contenido */
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1)); /* Gradiente suave para la ola */
+  animation: animateGradient 10s linear infinite;
+}
+
+@keyframes animateGradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}

@@ -13,7 +13,23 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Rutas
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Inicio' });
+  res.render('index');
+});
+
+app.get('/botnv', (req, res) => {
+  res.render('botnv');
+});
+
+app.get('/home', (req, res) => {
+  res.render('home');
+});
+
+app.get('/servers', (req, res) => {
+  res.render('servers');
+});
+
+app.get('/anuncios', (req, res) => {
+  res.render('anuncios');
 });
 
 app.listen(PORT, () => {
