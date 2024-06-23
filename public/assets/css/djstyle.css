@@ -102,3 +102,46 @@
       background-position: 0% 50%;
   }
 }
+
+
+.music-player {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+.music-player.minimized {
+  transform: translateY(90%);
+}
+.music-player-header {
+  background: #f7f7f7;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+.music-player-body {
+  padding: 10px;
+}
+.music-player-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.music-player-button img {
+  width: 20px;
+  height: 20px;
+}
+#apple-music-player {
+  width: 100%;
+  outline: none;
+}

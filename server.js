@@ -17,19 +17,29 @@ app.get('/', (req, res) => {
 });
 
 app.get('/botnv', (req, res) => {
-  res.render('botnv');
+  const developerToken = 'YOUR_DEVELOPER_TOKEN'; // Reemplaza con tu token de desarrollador
+    const stationUrl = 'https://music.apple.com/es/station/station-id'; // Reemplaza con la URL de tu estación de radio
+  res.render('botnv', {
+    developerToken: developerToken,
+    stationUrl: stationUrl
+  });
 });
 
 app.get('/home', (req, res) => {
-  res.render('home');
+  res.render('sections/home');
 });
 
+app.get('/snap', (req, res) => {
+  res.render('snap/snap');
+});
+
+
 app.get('/servers', (req, res) => {
-  res.render('servers');
+  res.render('sections/servers');
 });
 
 app.get('/anuncios', (req, res) => {
-  res.render('anuncios');
+  res.render('sections/anuncios');
 });
 
 app.get('/nvcraft', (req, res) => {

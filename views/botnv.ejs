@@ -9,6 +9,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://js-cdn.music.apple.com/musickit/v1/musickit.js"></script>
 
     <link rel="stylesheet" href="/assets/css/djstyle.css">
     <link rel="stylesheet" href="/assets/css/root.css">
@@ -18,7 +19,7 @@
 
 <%- include('partials/navbar') %>
 
-<section class="content-section">
+<section id="dj-musica" class="content-section">
     <div class="center-box">
         <div class="red-box">
             <div class="content-wrapper">
@@ -49,29 +50,29 @@
                     <p>Puedes usar links de Youtube, Spotify, o simplemente escribe el nombre de la canción</p>
                     <!-- <p><img src="https://cdn.discordapp.com/attachments/788891248953917474/1139648361776025641/image.png"></p> -->
                     <hr>
-                    <!-- <div class="music">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div> -->
                 </div>
             </div>
         </div>
     </div>
+    <div class="music-player minimized" id="musicPlayer">
+        <div class="music-player-header">
+            <span>Reproductor de Música</span>
+            <button class="music-player-button" onclick="toggleMinimize()">
+                <img src="https://img.icons8.com/ios-filled/50/000000/minus.png" id="minimizeIcon"/>
+            </button>
+        </div>
+        <div class="music-player-body">
+            <div id="apple-music-player"></div>
+            <button onclick="playMusic()">Reproducir</button>
+        </div>
+    </div>
 </section>
-
 
 <%- include('partials/footer') %>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="/assets/js/scriptbotdj.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>

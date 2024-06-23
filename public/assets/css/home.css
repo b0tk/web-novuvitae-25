@@ -1,7 +1,7 @@
 .home {
     width: 100%;
     height: 100vh;
-    background: url('https://cdn.discordapp.com/attachments/1162263699256508467/1253832406730014770/back.jpg?ex=667749ec&is=6675f86c&hm=a5641d7cdc012754f5b280685313c991b704b701d50128a0c07cb25fa3dc2f6b&') center/cover no-repeat;
+    background: url('/assets/src/media/img/back.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
 
 .text-container {
     position: absolute;
-    top: 63%; /* Alineación vertical en el centro */
+    top: 65%; /* Alineación vertical en el centro */
     left: 60%; /* Alineación horizontal en el centro */
     transform: translate(-50%, -50%); /* Centrar el contenido */
     width: 100%;
