@@ -1,6 +1,7 @@
-.container {
+body {
     background-image: url('assets/src/media/servers/minecraft-1106262_1920.png');
     background-repeat: no-repeat;
     background-position: contain;
     background-size: cover;
 }
+

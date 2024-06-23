@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 3000;
 // Configuración de EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.set('views/servers', path.join(__dirname, 'servers'));
 
 // Archivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,16 +32,16 @@ app.get('/anuncios', (req, res) => {
   res.render('anuncios');
 });
 
-app.get('/servers/nvcraft', (req, res) => {
-  res.render('nvcraft');
+app.get('/nvcraft', (req, res) => {
+  res.render('pags-sv/nvcraft'); // Aquí va la ruta del archivo ejs
 });
 
-app.get('/servers/projectnv', (req, res) => {
-  res.render('projectnv');
+app.get('/projectnv', (req, res) => {
+  res.render('pags-sv/projectnv');
 });
 
-app.get('/servers/rusticanv', (req, res) => {
-  res.render('rusticanv');
+app.get('/rusticanv', (req, res) => {
+  res.render('pags-sv/rusticanv');
 });
 
 app.listen(PORT, () => {
