@@ -1,45 +1,109 @@
 .navbar {
-    background-color: #0808087c;
-    backdrop-filter: blur(75px);
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 3;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  .navbar li {
-    display: inline;
-  }
-  
-  .navbar li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .navbar li a:hover {
-    /* background-color: #ddd; */
-    color: black;
+  background-color: #0808087c;
+  backdrop-filter: blur(75px);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-brand img {
+  height: 40px;
+  padding-top: 7px;
+}
+
+.navbar-toggler {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Hidden by default, shown on small screens */
+}
+
+.navbar-toggler-icon::before {
+  content: '\2630'; /* Unicode character for hamburger icon */
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.nav-link {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #5a5a5a;
+}
+
+.btn-discord {
+  background-color: #7289da;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-discord:hover {
+  background-color: #5b6eae;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .navbar-collapse {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
   }
 
-  .btn-discord {
-    background-color: #7289da;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+  .navbar-collapse.show {
+      display: flex;
   }
-  .btn-discord:hover {
-    background-color: #5b6eae;
+
+  .navbar-nav {
+      flex-direction: column;
+      width: 100%;
   }
+
+  .nav-item {
+      margin-left: 0;
+      width: 100%;
+  }
+
+  .nav-link {
+      padding: 10px 20px;
+      width: 100%;
+      text-align: left;
+  }
+
+  .navbar-toggler {
+      display: block;
+  }
+}

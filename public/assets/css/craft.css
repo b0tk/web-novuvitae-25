@@ -1,18 +1,10 @@
-.class {
-    background-image: url('assets/src/media/servers/minecraft-1106262_1920.png');
-    background-repeat: no-repeat;
-    background-position: contain;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+.body {
+    background-image: url('/assets/src/media/servers/minecraft-1106262_1920.png'); 
+    background-color: #1f1f1f;
     backdrop-filter: blur(10px);
-    overflow-x: hidden;
-}        
+    z-index: 1;
+} 
+
 .box01 {
     width: 100%;
     height: 100%;
@@ -33,7 +25,7 @@
     width: 100%;
     height: 90%;
     max-width: 1600px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -45,7 +37,7 @@
 .div-box {
     width: 680px;
     height: 200px;
-    background-color: #32220393; /* Gris transparente */
+    background-color: #32220393; 
     border-radius: 30px;
 }
 p {
@@ -53,18 +45,19 @@ p {
     color: white;
 }
 .btn-join {
+    margin-left: 45%;
     padding: 18px 80px;
     margin-bottom: 40px;
     font-size: 50px;
     font-family: "Brush Script MT", cursive;
     font-weight: bold;
     color: #fff;
-    background-color: #5865F2; /* Color de Discord */
+    background-color: #5865F2; 
     border: none;
     border-radius: 40px;
     cursor: pointer;
-    position: relative;
-    overflow: hidden;
+    position: center;
+    overflow-x: hidden;
     transition: background-color 0.3s ease;
 }
 .btn-join:hover {
@@ -81,6 +74,7 @@ p {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, transparent 10.01%);
     background-position: 50%;
     background-size: 50px 50px;
+    overflow-x: hidden;
     transform: translate(-50%, -50%) scale(0);
     transition: transform 0.5s ease;
 }
