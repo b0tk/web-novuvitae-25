@@ -16,15 +16,6 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/botnv', (req, res) => {
-  const developerToken = 'YOUR_DEVELOPER_TOKEN'; // Reemplaza con tu token de desarrollador
-    const stationUrl = 'https://music.apple.com/es/station/station-id'; // Reemplaza con la URL de tu estación de radio
-  res.render('botnv', {
-    developerToken: developerToken,
-    stationUrl: stationUrl
-  });
-});
-
 app.get('/home', (req, res) => {
   res.render('sections/home');
 });
@@ -32,7 +23,6 @@ app.get('/home', (req, res) => {
 app.get('/snap', (req, res) => {
   res.render('snap/snap');
 });
-
 
 app.get('/servers', (req, res) => {
   res.render('sections/servers');
@@ -51,8 +41,39 @@ app.get('/projectnv', (req, res) => {
 });
 
 app.get('/rusticanv', (req, res) => {
-  res.render('pags-sv/rusticanv');
+  res.render('/pags-sv/rusticanv');
 });
+
+app.get('/botnv', (req, res) => {
+  res.render('pags-sv/botnv');
+});
+
+
+//footer links
+
+app.get('/team', (req, res) => {
+  res.render('links/team');
+});
+
+app.get('/store', (req, res) => {
+  res.render('links/store');
+});
+
+app.get('/tos', (req, res) => {
+  res.render('links/tos');
+});
+
+app.get('/services', (req, res) => {
+  res.render('links/services');
+});
+
+// app.get('/tos', (req, res) => {
+//   res.render('pags-sv/rusticanv');
+// });
+
+// app.get('/tos', (req, res) => {
+//   res.render('pags-sv/rusticanv');
+// });
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
