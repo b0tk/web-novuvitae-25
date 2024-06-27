@@ -1,33 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
-    MusicKit.configure({
-        developerToken: '<%= developerToken %>',  // Reemplaza con tu token de desarrollador
-        app: {
-            name: 'Nombre de tu App',
-            build: '1.0.0'
+document.addEventListener('DOMContentLoaded', () => {
+    const playerContainer = document.getElementById('playerContainer');
+    const toggleButton = document.getElementById('toggleButton');
+    const playPauseButton = document.getElementById('playPauseButton');
+    const muteButton = document.getElementById('muteButton');
+    const trackTitle = document.getElementById('trackTitle');
+    const trackArtist = document.getElementById('trackArtist');
+
+    toggleButton.addEventListener('click', () => {
+        playerContainer.classList.toggle('active');
+        toggleButton.textContent = playerContainer.classList.contains('active') ? '⬇️' : '⬆️';
+    });
+
+    const music = MusicKit.getInstance();
+    playPauseButton.addEventListener('click', () => {
+        if (music.player.isPlaying) {
+            music.player.pause();
+        } else {
+            music.player.play();
         }
     });
+
+    muteButton.addEventListener('click', () => {
+        music.player.muted = !music.player.muted;
+    });
+
+    // Update track info
+    music.player.addEventListener('mediaItemDidChange', () => {
+        const currentTrack = music.player.nowPlayingItem;
+        if (currentTrack) {
+            trackTitle.textContent = currentTrack.title;
+            trackArtist.textContent = currentTrack.artistName;
+        }
+    });
+
+    // Initialize MusicKit
+    MusicKit.configure({
+        developerToken: 'YOUR_DEVELOPER_TOKEN',
+        app: {
+            name: 'Your App Name',
+            build: 'YOUR_APP_BUILD_NUMBER',
+        },
+    });
+
+    // Set your music user token here
+    music.setQueue({
+        url: 'https://music.apple.com/us/playlist/your-playlist-url'
+    }).then(() => {
+        music.player.play();
+    });
 });
-
-const music = MusicKit.getInstance();
-
-function playMusic() {
-    const player = document.getElementById('musicPlayer');
-    if (player.classList.contains('minimized')) {
-        toggleMinimize();
-    }
-    music.setQueue({ url: '<%= stationUrl %>' }) // Reemplaza con la URL de tu estación de radio
-        .then(() => {
-            music.play();
-        });
-}
-
-function toggleMinimize() {
-    const player = document.getElementById('musicPlayer');
-    const icon = document.getElementById('minimizeIcon');
-    player.classList.toggle('minimized');
-    if (player.classList.contains('minimized')) {
-        icon.src = "https://img.icons8.com/ios-filled/50/000000/plus.png";
-    } else {
-        icon.src = "https://img.icons8.com/ios-filled/50/000000/minus.png";
-    }
-}

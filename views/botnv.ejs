@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DJ-NV | NovuVitae</title>
-    <link rel="icon" href="https://cdn.discordapp.com/attachments/1162263699256508467/1162264041931145286/logo-icon.png?ex=66770cfd&is=6675bb7d&hm=008d54e80baa54af59b734f2a7c7787f90fa053de777e4a9fe91e050db59041e&" type="image/x-icon">
+    <link rel="icon" href="/assets/src/media/img/Sitio_Web_landing_page_diseno_delicado_minimalista_para_joyas_hechas_a_mano_dorado_y_beis__1_-removebg-preview.png" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome CSS -->
@@ -25,7 +25,7 @@
             <div class="content-wrapper">
                 <div class="image-wrapper">
                     <!-- <img class="puntavinilo" src="https://cdn.discordapp.com/attachments/1162263699256508467/1162264041931145286/logo-icon.png?ex=66770cfd&is=6675bb7d&hm=008d54e80baa54af59b734f2a7c7787f90fa053de777e4a9fe91e050db59041e&" alt="punta"> -->
-                    <img class="vinilobot" src="https://cdn.discordapp.com/attachments/1162263699256508467/1253859288649175060/Sitio_Web_landing_page_diseno_delicado_minimalista_para_joyas_hechas_a_mano_dorado_y_beis__1_-removebg-preview.png?ex=667762f5&is=66761175&hm=b512d5e5f011de94050080cab6828a52af04536620adc908c078c8c987c590af&" alt="Your Image">
+                    <img class="vinilobot" src="/assets/src/media/img/Sitio_Web_landing_page_diseno_delicado_minimalista_para_joyas_hechas_a_mano_dorado_y_beis__1_-removebg-preview.png" alt="Your Image">
                     <h3 id="dj-nv-header">DJ-NV | 😘</h3>
                     <div id="estado-bot"></div>
                 </div>
@@ -54,23 +54,30 @@
             </div>
         </div>
     </div>
-    <div class="music-player minimized" id="musicPlayer">
-        <div class="music-player-header">
-            <span>Reproductor de Música</span>
-            <button class="music-player-button" onclick="toggleMinimize()">
-                <img src="https://img.icons8.com/ios-filled/50/000000/minus.png" id="minimizeIcon"/>
-            </button>
+    <div class="player-container" id="playerContainer">
+        <div class="player-header">
+            <span>Apple Music Player</span>
+            <span class="toggle-button" id="toggleButton">⬆️</span>
         </div>
-        <div class="music-player-body">
-            <div id="apple-music-player"></div>
-            <button onclick="playMusic()">Reproducir</button>
+        <div class="player-content">
+            <div class="player-info">
+                <span id="trackTitle">Track Title</span> - <span id="trackArtist">Track Artist</span>
+            </div>
+            <div class="player-controls">
+                <button id="playPauseButton">Play/Pause</button>
+                <button id="muteButton">Mute/Unmute</button>
+            </div>
         </div>
     </div>
 </section>
 
+
 <%- include('partials/footer') %>
 
+<script src="https://js-cdn.music.apple.com/musickit/v3/musickit.js"></script>
+<script src="/assets/js/scriptbotdj.js"></script>
 <!-- Bootstrap JS and dependencies -->
+ 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="/assets/js/scriptbotdj.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
