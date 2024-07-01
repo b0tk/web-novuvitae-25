@@ -41,7 +41,7 @@ app.get('/projectnv', (req, res) => {
 });
 
 app.get('/rusticanv', (req, res) => {
-  res.render('/pags-sv/rusticanv');
+  res.render('pags-sv/rusticanv');
 });
 
 app.get('/botnv', (req, res) => {
