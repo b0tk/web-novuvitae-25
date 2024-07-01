@@ -1,5 +1,5 @@
 body {
-    background-image: url('/assets/src/media/servers/minecraft-1106262_1920.png'); 
+    background-image: url('/assets/src/media/servers/default.webp'); 
     background-color: #1f1f1f;
     overflow-x: hidden;
     z-index: 1;
@@ -9,7 +9,7 @@ body {
 }  
 
 .fondo {
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(15px);
     display: flex;
     flex-direction: column;
     justify-content: center;
